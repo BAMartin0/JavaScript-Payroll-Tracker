@@ -1,7 +1,7 @@
 // Get a reference to the #add-employees-btn element
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
-const people = [];
-let advance = true
+const employeeArray = [];
+let advance = true;
 
 
 // Collect employee data
@@ -16,20 +16,20 @@ const collectEmployees = function () {
   console.log(lastName)
   console.log(salary)
 
-const person = {
+const employee = {
   firstName,
   lastName,
   salary: parseInt(salary),
 }
 
-people.push(person)
+employeeArray.push(employee)
 
 const cont = confirm("Would you like to add another Employee?");
   if (!cont) {
     advance = false
   } 
   }
-  console.log(people)
+  console.log(employeeArray)
 }
 
 // Display the average salary
@@ -37,27 +37,28 @@ const displayAverageSalary = function (employeesArray) {
   // TODO: Calculate and display the average salary
   // const sum() = peopleFacts[2]
   let sum = 0;
-   for (let i = 0; i < people.length; i++) {
-     console.log(people[i].salary)
-     sum = sum + people[i].salary
+   for (let i = 0; i < employeeArray.length; i++) {
+     console.log(employeeArray[i].salary)
+     sum = sum + employeeArray[i].salary
    }
-  const averageSalary = (sum / people.length); 
+  const averageSalary = (sum / employeeArray.length); 
   
-   console.log(`The average salary for our ${people.length} employee(s) is ${averageSalary}`)
+   console.log(`The average salary for our ${employeeArray.length} employee(s) is ${averageSalary}`)
 }
 
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
   // TODO: Select and display a random employee
-  const randomIndex = Math.floor(Math.random() * people.length);
+  const randomIndex = Math.floor(Math.random() * employeeArray.length);
 
-console.log(people[randomIndex])
+console.log(employeeArray[randomIndex])
 }
+
 
 /*
   ====================
   STARTER CODE
-  Do not modify any of the code below this line:
+  Do not modify any of the code below this line: 
 */
 
 // Display employee data in an HTML table
